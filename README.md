@@ -1,7 +1,5 @@
 # vue-layout-flex
 
-<h1 align="center">vue-layout-flex</h1>
-
 vue-layout-flex是一个flex布局系统。
 
 
