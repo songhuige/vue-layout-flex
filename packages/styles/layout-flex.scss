@@ -1,0 +1,85 @@
+
+$justify-content-map:(
+    center: center,
+    end: flex-end,
+    start: flex-start,
+    between: space-between,
+    around: space-around,
+);
+
+$align-items-map : (
+    center: center,
+    start: flex-start,
+    end: flex-end,
+    stretch: stretch,
+    baseline: baseline,
+);
+
+$align-self-map:(
+    center: center,
+    start: flex-start,
+    end: flex-end,
+    stretch: stretch,
+    baseline: baseline,
+);
+
+$align-content-map: ( 
+    center: center,
+    end:flex-end, 
+    start:flex-start, 
+    between:space-between,
+    around:space-around, 
+    stretch:stretch
+);
+
+.fx-row,
+.fx-col,
+.fx-row-rvs,
+.fx-col-rvs{
+    display: flex;
+}
+.fx-row {
+    flex-direction: row;
+}
+
+.fx-col {
+    flex-direction: column;
+}
+
+.fx-row-rvs {
+    flex-direction: row-reverse;
+}
+
+.fx-col-rvs {
+    flex-direction: column-reverse;
+}
+
+.fx-wrap-no {
+    flex-wrap: nowrap;
+}
+
+@each $axis-key, $axis-value in $justify-content-map{
+    @each $cross-key, $cross-value in $align-items-map{
+        .fx-#{$axis-key}-#{$cross-key}{
+            justify-content: $axis-value;
+            align-items: $cross-value;
+        }
+    }
+}
+
+@each $key, $value in $align-content-map {
+    .fx-wrap-#{$key} {
+        flex-wrap: wrap;
+        align-content: $value;
+    }
+    .fx-wrap-rvs-#{$key} {
+        flex-wrap: wrap-reverse;
+        align-content: $value;
+    }
+}
+
+@each $key, $value in $align-self-map {
+    .fx-self-#{$key} {
+        align-self: $value;
+    }
+}

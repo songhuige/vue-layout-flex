@@ -1,0 +1,7 @@
+@import '../../../packages/styles/layout-flex.scss';
+@import './box';
+@import './reset';
+
+body, html {
+    height: 100%;
+}

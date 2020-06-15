@@ -1,0 +1,107 @@
+
+$justify-content-map:(
+    center: center,
+    end: flex-end,
+    start: flex-start,
+    between: space-between,
+    around: space-around,
+);
+
+$align-items-map : (
+    center: center,
+    start: flex-start,
+    end: flex-end,
+    stretch: stretch,
+    baseline: baseline,
+);
+
+//align-item 的单个item设置
+$align-self-map:(
+    center: center,
+    start: flex-start,
+    end: flex-end,
+    stretch: stretch,
+    baseline: baseline,
+);
+
+//多行才会生效
+$align-content-map: ( 
+    center: center,
+    end:flex-end, 
+    start:flex-start, 
+    between:space-between,
+    around:space-around, 
+    stretch:stretch
+);
+
+
+// grid 布局中生效
+$justify-items-map: (
+    center: center,
+    stretch: stretch,
+    start: start,
+    end: end,
+);
+
+// grid 布局中生效
+$justify-self-map:(
+    center: center,
+    stretch: stretch,
+    start: start,
+    end: end,
+);
+
+.fx-row,
+.fx-col,
+.fx-row-rvs,
+.fx-col-rvs{
+    display: flex;
+}
+.fx-row {
+    flex-direction: row;
+}
+
+.fx-col {
+    flex-direction: column;
+}
+
+.fx-row-rvs {
+    flex-direction: row-reverse;
+}
+
+.fx-col-rvs {
+    flex-direction: column-reverse;
+}
+
+.fx-wrap-no {
+    flex-wrap: nowrap;
+}
+
+// 行在主轴和交叉轴的对齐方式
+@each $axis-key, $axis-value in $justify-content-map{
+    @each $cross-key, $cross-value in $align-items-map{
+        .fx-#{$axis-key}-#{$cross-key}{
+            justify-content: $axis-value;
+            align-items: $cross-value;
+        }
+    }
+}
+
+//多行对齐方式
+@each $key, $value in $align-content-map {
+    .fx-wrap-#{$key} {
+        flex-wrap: wrap;
+        align-content: $value;
+    }
+    .fx-wrap-rvs-#{$key} {
+        flex-wrap: wrap-reverse;
+        align-content: $value;
+    }
+}
+
+//align-items的单独设置
+@each $key, $value in $align-self-map {
+    .fx-self-#{$key} {
+        align-self: $value;
+    }
+}

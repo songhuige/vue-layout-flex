@@ -1,0 +1,72 @@
+$gaps: (0:0, 1:1px, 2:2px, 3:3px, 4:4px, 5:5px, 6:6px, 7:7px, 8:8px,9:9px,10:10px,11:11px,12:12px,15:15px,20:20px,25:25px);
+
+.box-sizing-border {
+    box-sizing: border-box;
+}
+
+@each $key, $value in $gaps {
+    .m#{$key} {
+        margin: $value;
+    }
+    .mv#{$key} {
+        margin-top: $value;
+        margin-bottom: $value;
+    }
+    .mh#{$key} {
+        margin-left: $value;
+        margin-right: $value;
+    }
+    .ml#{$key} {
+        margin-left: $value;
+    }
+    .mr#{$key} {
+        margin-right: $value;
+    }
+    .mt#{$key} {
+        margin-top: $value;
+    }
+    .mb#{$key} {
+        margin-bottom: $value;
+    }
+    .p#{$key} {
+        padding: $value;
+    }
+    .pv#{$key} {
+        padding-top: $value;
+        padding-bottom: $value;
+    }
+    .ph#{$key} {
+        padding-left: $value;
+        padding-right: $value;
+    }
+    .pl#{$key} {
+        padding-left: $value;
+    }
+    .pr#{$key} {
+        padding-right: $value;
+    }
+    .pt#{$key} {
+        padding-top: $value;
+    }
+    .pb#{$key} {
+        padding-bottom: $value;
+    }
+}
+
+@each $key, $value in (0:0, 1:1px, 2:2px) {
+    .b#{$key} {
+        border: $value;
+    }
+    .bl#{$key} {
+        border-left: $value;
+    }
+    .br#{$key} {
+        border-right: $value;
+    }
+    .bt#{$key} {
+        border-top: $value;
+    }
+    .bb#{$key} {
+        border-bottom: $value;
+    }
+}
