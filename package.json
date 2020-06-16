@@ -1,17 +1,27 @@
 {
   "name": "vue-layout-flex",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "main": "lib/vue-layout-flex.umd.min.js",
+  "keywords": [
+    "vue",
+    "flex",
+    "layout",
+    "directive"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:songhuige/vue-layout-flex.git"
+  },
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name vue-layout-flex --dest lib packages/index.js && cp"
+    "lib": "vue-cli-service build --target lib --name vue-layout-flex --dest lib packages/index.js"
   },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+  "peerDependencies": {
+    "vue": "^2.5.17"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
@@ -20,6 +30,9 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
