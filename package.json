@@ -18,7 +18,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name vue-layout-flex --dest lib packages/index.js"
+    "build:scss": "./node_modules/.bin/node-sass ./packages/styles/layout-flex.scss ./lib/styles/layout-flex.css",
+    "lib": "vue-cli-service build --target lib --name vue-layout-flex --dest lib packages/index.js && npm run build:scss"
   },
   "peerDependencies": {
     "vue": "^2.5.17"
